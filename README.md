@@ -1,8 +1,9 @@
 # Visualizing_NFL_Data
 
-# Group Members
-### Emily Hurst
-### Nicole Antkowiak
-### Victoria Barbosa Munoz
-### Omar Bernal
-### Sviatoslav Piasta
+# Group Members Tasks as of 2/12
+### Emily Hurst - html(bootstrap) templates
+### Nicole Antkowiak - Player Analysis Page
+### Victoria Barbosa Munoz - Home Page
+### Omar Bernal - Cleaning Data and SQLlite
+### Sviatoslav Piasta - Team Analysis Page
+
