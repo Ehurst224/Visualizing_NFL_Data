@@ -5,3 +5,4 @@
 ### Nicole Antkowiak
 ### Victoria Barbosa Munoz
 ### Omar Bernal
+### Victor Diaz
