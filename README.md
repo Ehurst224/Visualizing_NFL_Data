@@ -1,7 +1,7 @@
 # Visualizing_NFL_Data
 
 # Group Members Tasks as of 2/12
-### Emily Hurst - html(bootstrap) templates
+### Emily Hurst - html(bootstrap) templates (finishes 2/14)
 ### Nicole Antkowiak - Player Analysis Page
 ### Victoria Barbosa Munoz - Home Page
 ### Omar Bernal - Cleaning Data and SQLlite
