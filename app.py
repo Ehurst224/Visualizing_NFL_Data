@@ -61,6 +61,24 @@ def position():
     return render_template("/position.html")
 
 #################################################
+#API
+
+@app.route("/api/nfl")
+def nfl_grid():
+
+    session = Session(engine)
+
+    results = session.query(nfl.Player, nfl.Postition, nfl.Total_Fantasy_Points, nfl.Team, nfl.Age, nfl.Total_TDs).all()
+
+    results = [list(r) for r in results]
+
+    table_results = {
+        "table": results
+    }
+
+    session.close()
+
+    return jsonify(table_results)
 
 if __name__ == "__main__":
     app.run()
