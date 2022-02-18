@@ -11,7 +11,7 @@ from flask import (
     redirect)
 )
 
-engine = create_engine('sqlite:///nfl.db.sqlite')
+engine = create_engine('sqlite:///leauge.db')
 
 Base = automap_base()
 
