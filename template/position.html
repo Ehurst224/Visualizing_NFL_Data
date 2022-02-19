@@ -16,21 +16,26 @@
 
  <!-- home page -->
  <body>
+    <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
+            <!-- Title of Project -->
           <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+                <!-- Nav Bar Links -->
               <li class="nav-item">
+                  <!-- Home Page Link -->
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Analysis
                 </a>
+                <!-- Nav Bar Dropdown -->
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="player.html">Player Analysis</a></li>
                   <li><a class="dropdown-item" href="team.html">Team Analysis</a></li>
@@ -38,6 +43,7 @@
                 </ul>
               </li>
               <li class="nav-item">
+                  <!-- Data Page Link -->
                 <a class="nav-link" href="data.html">Data</a>
               </li>
             </ul>
@@ -45,13 +51,15 @@
         </div>
     </nav>
 
+    <!-- User chooses position -->
     <div class = "container">
         <div class = "row">
+            <!-- Dropdown to let user pick position -->
             <div class="col-md-4">
                 <div id = "content">
                     <h2>Pick a position to see the fantasy points</h2>
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Player 1
+                        Position
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <!-- <li><a class="dropdown-item" href="#">Action</a></li>
@@ -60,6 +68,8 @@
                         </ul>
                 </div>
             </div>
+
+            <!-- Line Graph: Players in that position vs. their fantasy points -->
             <div class="col-md-8">
                 <div id = "content">
                     <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
@@ -69,36 +79,45 @@
         </div>
     </div>
 
+    <!-- Title for the Static line graphs by position-->
     <div class = "container">
     <div class = "row align-items-center">
         <div class="col-md-12">
             <div id = "content">
-                <h2 style="text-align: center;">Total Team Fantasy Points</h2>
+                <h2 style="text-align: center;">Total Position Fantasy Points</h2>
             </div>
         </div>
     </div>
-</div>
+    </div>
 
+    <!-- Static tables (mini) of all the line graphs by position -->
     <div class = "container">
         <div class = "row align-items-center">
+            <!-- QB Graph -->
             <div class="col-md-3">
                 <div id = "content">
                     <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
                         height="200"alt="nfl stats intro "></center></a>
                 </div>
             </div>
+
+            <!-- RB Graph -->
             <div class="col-md-3">
                 <div id = "content">
                     <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
                         height="200"alt="nfl stats intro "></center></a>
                 </div>
             </div>
+
+            <!-- WR Graph -->
             <div class="col-md-3">
                 <div id = "content">
                     <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
                         height="200"alt="nfl stats intro "></center></a>
                 </div>
             </div>
+
+            <!-- TE Graph -->
             <div class="col-md-3">
                 <div id = "content">
                     <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 

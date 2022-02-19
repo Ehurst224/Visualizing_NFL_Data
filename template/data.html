@@ -16,35 +16,42 @@
 
  <!-- home page -->
  <body>
+  <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Analysis
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="player.html">Player Analysis</a></li>
-                <li><a class="dropdown-item" href="team.html">Team Analysis</a></li>
-                <li><a class="dropdown-item" href="position.html">Position Page</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="data.html">Data</a>
-            </li>
-          </ul>
-        </div>
+    <div class="container-fluid">
+        <!-- Title of Project -->
+      <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <!-- Nav Bar Links -->
+          <li class="nav-item">
+              <!-- Home Page Link -->
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Analysis
+            </a>
+            <!-- Nav Bar Dropdown -->
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="player.html">Player Analysis</a></li>
+              <li><a class="dropdown-item" href="team.html">Team Analysis</a></li>
+              <li><a class="dropdown-item" href="position.html">Position Page</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+              <!-- Data Page Link -->
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+        </ul>
       </div>
-  </nav>
+    </div>
+</nav>
 
+    <!-- Data title and link to where we got our data -->
     <div class = "container background">
         <div class = "compare">
             <h2 align="center:">Data</h2>
@@ -53,7 +60,7 @@
             >You can reference our data here</a></p>
         </div>
 
-
+    <!-- Data -->
     <table border="1" class="dataframe">
         <thead>
           <tr style="text-align: center;">
