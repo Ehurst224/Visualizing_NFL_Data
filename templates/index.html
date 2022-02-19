@@ -37,14 +37,14 @@
                 </a>
                 <!-- Nav Bar Dropdown -->
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="player.html">Player Analysis</a></li>
-                  <li><a class="dropdown-item" href="team.html">Team Analysis</a></li>
-                  <li><a class="dropdown-item" href="position.html">Position Page</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('player') }}">Player Analysis</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('team') }}">Team Analysis</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('position') }}">Position Page</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                   <!-- Data Page Link -->
-                <a class="nav-link" href="data.html">Data</a>
+                <a class="nav-link" href="{{ url_for('data') }}">Data</a>
               </li>
             </ul>
           </div>

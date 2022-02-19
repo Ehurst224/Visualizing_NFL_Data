@@ -3,6 +3,8 @@ from flask import Flask, render_template, redirect,jsonify
 # import scrape_costa
 from sqlalchemy import create_engine
 # import pandas as pd
+from flask import url_for
+
 
 # Download the Iris Dataset and place it in the same directory as this newapp.py
 # file.  Then comment out everything but the lines 14,15,16.  Run it.
