@@ -1,8 +1,4 @@
 // read in data from website
-const url = "../../EDA/nfl copy.csv"
-
-function top5players() {
-    d3.csv(url).then((data) => {
-        console.log(data);
-    }
-    )}
+d3.csv("/../../EDA/qb.csv", function(data) {
+    console.log(data)}
+);
