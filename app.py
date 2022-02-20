@@ -1,4 +1,5 @@
 import os
+from flask.globals import session
 import pandas as pd
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, engine, func, or_
@@ -21,6 +22,7 @@ Base.prepare(engine, reflect=True)
 print(Base.classes.keys())
 
 nfl = Base.classes.nfl
+nfl_clean = Base.classes.nfl_all
 qb = Base.classes.qb
 rb = Base.classes.rb
 te = Base.classes.te
@@ -67,10 +69,11 @@ def position():
 @app.route("/api/nfl")
 def nfl_grid():
 
-    df = pd.read_sql_table('qb',con=engine)
+    df = pd.read_sql_table('nfl_all',con=engine)
     table_results = df.to_dict('records')
     print(df)
     return jsonify(table_results)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -2,131 +2,89 @@
 <html lang="en">
 
 
- <!-- to create the home page -->
+<!-- to create the home page -->
+
 <head>
     <!-- encoding -->
-    <meta charset = "UTF-8">
+    <meta charset="UTF-8">
     <title>Position Analysis</title>
     <!-- boot strap -->
     <!-- <link rel="stylesheet" href="reset.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- css style sheet (must be after style sheet)-->
-    <link rel= "stylesheet" href = "../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
 
- <!-- home page -->
- <body>
+<!-- home page -->
+
+<body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Title of Project -->
-          <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <!-- Nav Bar Links -->
-              <li class="nav-item">
-                  <!-- Home Page Link -->
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Analysis
-                </a>
-                <!-- Nav Bar Dropdown -->
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="{{ url_for('player') }}">Player Analysis</a></li>
-                  <li><a class="dropdown-item" href="{{ url_for('team') }}">Team Analysis</a></li>
-                  <li><a class="dropdown-item" href="{{ url_for('position') }}">Position Page</a></li>
+            <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <!-- Nav Bar Links -->
+                    <li class="nav-item">
+                        <!-- Home Page Link -->
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Analysis
+                        </a>
+                        <!-- Nav Bar Dropdown -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ url_for('player') }}">Player Analysis</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('team') }}">Team Analysis</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('position') }}">Position Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Data Page Link -->
+                        <a class="nav-link" href="{{ url_for('data') }}">Data</a>
+                    </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                  <!-- Data Page Link -->
-                <a class="nav-link" href="{{ url_for('data') }}">Data</a>
-              </li>
-            </ul>
-          </div>
+            </div>
         </div>
     </nav>
-
-    <!-- User chooses position -->
-    <div class = "container">
-        <div class = "row">
-            <!-- Dropdown to let user pick position -->
-            <div class="col-md-4">
-                <div id = "content">
-                    <h2>Pick a position to see the fantasy points</h2>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Position
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <!-- <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                        </ul>
-                </div>
-            </div>
-
-            <!-- Line Graph: Players in that position vs. their fantasy points -->
-            <div class="col-md-8">
-                <div id = "content">
-                    <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
-                        height="200"alt="nfl stats intro "></center></a>
-                </div>
-            </div>
-        </div>
+    <div>
+        <div class='tableauPlaceholder' id='viz1645321436505' style='position: relative'><object class='tableauViz'
+                style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
+                <param name='name' value='teamtotalbyposition&#47;Sheet4' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='en-US' />
+                <param name='filter' value='publish=yes' /></object></div>
+        <script type='text/javascript'>
+            var divElement = document.getElementById('viz1645321436505');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
     </div>
 
-    <!-- Title for the Static line graphs by position-->
-    <div class = "container">
-    <div class = "row align-items-center">
-        <div class="col-md-12">
-            <div id = "content">
-                <h2 style="text-align: center;">Total Position Fantasy Points</h2>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <!-- Static tables (mini) of all the line graphs by position -->
-    <div class = "container">
-        <div class = "row align-items-center">
-            <!-- QB Graph -->
-            <div class="col-md-3">
-                <div id = "content">
-                    <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
-                        height="200"alt="nfl stats intro "></center></a>
-                </div>
-            </div>
-
-            <!-- RB Graph -->
-            <div class="col-md-3">
-                <div id = "content">
-                    <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
-                        height="200"alt="nfl stats intro "></center></a>
-                </div>
-            </div>
-
-            <!-- WR Graph -->
-            <div class="col-md-3">
-                <div id = "content">
-                    <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
-                        height="200"alt="nfl stats intro "></center></a>
-                </div>
-            </div>
-
-            <!-- TE Graph -->
-            <div class="col-md-3">
-                <div id = "content">
-                    <a target = "blank" href = "../assets/images/NFL_logo.jpg"><center><img id="floated"class="thumbnail" src="../assets/images/NFL_logo.jpg" width="400" 
-                        height="200"alt="nfl stats intro "></center></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
