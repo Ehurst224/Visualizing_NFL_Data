@@ -1,6 +1,7 @@
 // read in data from website
 const url = "http://127.0.0.1:5000/api/nfl";
 
+
 // (async ($d3) => {
 //     const mainContainer = $d3
 //         .select('body')
@@ -17,7 +18,8 @@ d3.json(url).then(function (data) {
     let position = data.map(i => i.Position);
 
     //buildTable(data);
-
+    const uniqueTeams = Array.from(new Set(team));
+    console.log(uniqueTeams);
     // function buildTable(data) {
     //     var table = document.getElementById('myTable')
 
@@ -54,7 +56,7 @@ d3.json(url).then(function (data) {
 
     // const positionF = data.filter(data.TotalFantasyPoints => data.TotalFantasyPoints >= 350);
 
-    
+
     //SUM OF
     const totalQB = positionQB.reduce((total, positionQB) => total + positionQB.TotalFantasyPoints, 0);
     const totalRB = positionRB.reduce((total, positionRB) => total + positionRB.TotalFantasyPoints, 0);
@@ -107,20 +109,36 @@ d3.json(url).then(function (data) {
     function groupBy(list, keyGetter) {
         const map = new Map();
         list.forEach((item) => {
-             const key = keyGetter(item);
-             const collection = map.get(key);
-             if (!collection) {
-                 map.set(key, [item]);
-             } else {
-                 collection.push(item);
-             }
+            const key = keyGetter(item);
+            const collection = map.get(key);
+            if (!collection) {
+                map.set(key, [item]);
+            } else {
+                collection.push(item);
+            }
         });
         return map;
     }
 
     const grouped = groupBy(data, data => data.Team);
-    
-    console.log(grouped.get("BAL"));
+
+    console.log(grouped.get("BUF"));
+
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        
+    }
+
+    // function onlyUnique(value, index, self) {
+    //     return self.indexOf(value) === index;
+    //   }
+
+    //   // usage example:
+    //   var a = ['a', 1, 'a', 2, '1'];
+    //   var unique = data.filter(onlyUnique);
+    //let unique = [...new Set(data, data => data.Team)];
+
+    //console.log(unique);
 
     let trace1 = {
         x: positionTotals,
