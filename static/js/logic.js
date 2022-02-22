@@ -15,11 +15,50 @@ d3.json(url).then(function (data) {
     let players = data.map(i => i.Player);
     let total = data.map(i => i.TotalFantasyPoints);
     let team = data.map(i => i.Team);
+    let Age = data.map(i => i.Age);
+    let Completions = data.map(i => i.Completions);
+    let Fumbles = data.map(i => i.Fumbles);
+    let FumblesLost = data.map(i => i.FumblesLost);
+    let Interceptions = data.map(i => i.Interceptions);
+    let Overallrank = data.map(i => i.OverallRank);
+    let PassingAttempts = data.map(i => i.PassingAttempts);
+    let PassingTDs = data.map(i => i.PassingTDs);
     let position = data.map(i => i.Position);
+    let PassingYards = data.map(i => i.PassingYards);
+    let PointsPerReception = data.map(i => i.PointsPerReception);
+    let PositionRank = data.map(i => i.PositionRank);
+    let ReceivingTDs = data.map(i => i.ReceivingTDs);
+    let ReceivingYards = data.map(i => i.ReceivingYards);
+    let ReceivingYardsperReception = data.map(i => i.ReceivingYardsperReception);
+    let Receptions = data.map(i => i.Receptions);
+    let RushAttempts = data.map(i => i.RushAttempts);
+    let RushTDs = data.map(i => i.RushTDs);
+    let RushingYards = data.map(i => i.RushingYards);
+    let RushingYardsperAttempt = data.map(i => i.RushingYardsperAttempt);
+    let Targets = data.map(i => i.Targets);
+    let TotalTDs = data.map(i => i.TotalTDs);
+
+    const totalPassAttempts = data.reduce((total, data) => total + data.PassingAttempts, 0);
+    const totalRushAttempts = data.reduce((total, data) => total + data.RushAttempts, 0);
+    const totalPassingYards = data.reduce((total, data) => total + data.PassingYards, 0);
+    const totalRushingYards = data.reduce((total, data) => total + data.RushingYards, 0);
+    const totalRushTDs = data.reduce((total, data) => total + data.RushTDs, 0);
+    const totalPassingTDs = data.reduce((total, data) => total + data.PassingTDs, 0);
+    // const total = data.reduce((total, data) => total + data., 0);
+    // const total = data.reduce((total, data) => total + data., 0);
+    // const total = data.reduce((total, data) => total + data., 0);
 
     //buildTable(data);
-    const uniqueTeams = Array.from(new Set(team));
-    console.log(uniqueTeams);
+    const uniqueAge = Array.from(new Set(Age));
+    console.log(uniqueAge);
+    const uniqueTeam = Array.from(new Set(team));
+    console.log(uniqueTeam);
+    
+    let passTotals = [totalPassAttempts, totalPassingYards, totalPassingTDs];
+    //let passTNames = ['Total Pass Attempts', 'Total Passing Yards', 'Total Passing TDs'];
+    let rushTotals = [totalRushAttempts, totalRushingYards, totalRushTDs];
+    let statNames = ['Total Attempts', 'Total Yards', 'Total TDs'];
+
     // function buildTable(data) {
     //     var table = document.getElementById('myTable')
 
@@ -69,15 +108,15 @@ d3.json(url).then(function (data) {
     const countWR = totalWR / positionWR.length;
 
     const qbname = positionQB
-        //.map(i => i.PassingYards)
-        .filter(i => i.TotalFantasyPoints >= 300);
+        .map(i => i.Player);
+    //.filter(i => i.TotalFantasyPoints >= 300);
     // .sort((a, b) => a - b);
     //.reduce((a,b) => a+b, 0);
 
     // console.log(combined);
 
     //let qbname = positionQB.map(i => i.Player);
-    let qbpoints = qbname.map(i => i.TotalFantasyPoints);
+    //let qbpoints = qbname.map(i => i.TotalFantasyPoints);
     let positions = ['WR', 'QB', 'RB', 'TE'];
     let positionTotals = [totalWR, totalQB, totalRB, totalTE];
     let positionCount = [countWR, countQB, countRB, countTE];
@@ -120,14 +159,16 @@ d3.json(url).then(function (data) {
         return map;
     }
 
-    const grouped = groupBy(data, data => data.Team);
+    const groupedTeam = groupBy(data, data => data.Team);
+    const groupedAge = groupBy(data, data => data.Age);
 
-    console.log(grouped.get("BUF"));
+    //console.log(grouped.get("BUF"));
+    console.log(groupedTeam);
 
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        
-    }
+    // for (let i = 0; i < array.length; i++) {
+    //     const element = array[i];
+
+
 
     // function onlyUnique(value, index, self) {
     //     return self.indexOf(value) === index;
@@ -139,6 +180,63 @@ d3.json(url).then(function (data) {
     //let unique = [...new Set(data, data => data.Team)];
 
     //console.log(unique);
+
+    let trace20 = {
+        x: statNames,
+        y: rushTotals,
+        type: 'bar',
+        //orientation: "h",
+        name: "Rushing",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'x',
+        //      order: 'descending'
+        //  }]
+        text: rushTotals.map(String),
+        textposition: 'auto',
+        hoverinfo: 'none',
+        marker: {
+            color: 'rgb(158,202,225)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(8,48,107)',
+                width: 1.5
+            }
+        }
+    };
+
+    let trace10 = {
+        x: statNames,
+        y: passTotals,
+        type: 'bar',
+        //orientation: "h",
+        name: "Passing",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'x',
+        //      order: 'descending'
+        //  }]
+        text: passTotals.map(String),
+        textposition: 'auto',
+        hoverinfo: "none",
+        marker: {
+            color: 'rgb(158,202,25)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(8,148,17)',
+                width: 1.5
+            }
+        }
+    };
+
+    let data10 = [trace20, trace10];
+
+    let layout10 = {
+        barmode: 'grouped',
+        title: '<b>Rushing vs. Passing</b>'
+    };
+
+    Plotly.newPlot("bar2", data10, layout10);
 
     let trace1 = {
         x: positionTotals,
