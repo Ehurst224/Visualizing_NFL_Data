@@ -49,8 +49,8 @@ d3.json(url).then(function (data) {
     // const total = data.reduce((total, data) => total + data., 0);
 
     //buildTable(data);
-    const uniqueAge = Array.from(new Set(Age));
-    console.log(uniqueAge);
+    //const uniqueAge = Array.from(new Set(Age));
+    //console.log(uniqueAge);
     const uniqueTeam = Array.from(new Set(team));
     console.log(uniqueTeam);
     
