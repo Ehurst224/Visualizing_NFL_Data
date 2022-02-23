@@ -93,6 +93,8 @@ d3.json(url).then(function (data) {
     const positionTE = data.filter(data => data.Position === 'TE');
     const positionWR = data.filter(data => data.Position === 'WR');
 
+    // const top5QB = positionQB.sort((a,b) => )
+
     // const positionF = data.filter(data.TotalFantasyPoints => data.TotalFantasyPoints >= 350);
 
 
@@ -114,9 +116,15 @@ d3.json(url).then(function (data) {
     //.reduce((a,b) => a+b, 0);
 
     // console.log(combined);
+    const rbname = positionRB.map(i => i.Player);
+    const rbpoints = positionRB.map(i => i.TotalFantasyPoints);
+    const tename = positionTE.map(i => i.Player);
+    const tepoints = positionTE.map(i => i.TotalFantasyPoints);
+    const wrname = positionWR.map(i => i.Player);
+    const wrpoints = positionWR.map(i => i.TotalFantasyPoints);
 
     //let qbname = positionQB.map(i => i.Player);
-    //let qbpoints = qbname.map(i => i.TotalFantasyPoints);
+    let qbpoints = positionQB.map(i => i.TotalFantasyPoints);
     let positions = ['WR', 'QB', 'RB', 'TE'];
     let positionTotals = [totalWR, totalQB, totalRB, totalTE];
     let positionCount = [countWR, countQB, countRB, countTE];
@@ -180,6 +188,136 @@ d3.json(url).then(function (data) {
     //let unique = [...new Set(data, data => data.Team)];
 
     //console.log(unique);
+
+    // let layerColumn = "Positions";
+    // let yColumn = "TotalFantasyPoints"
+    // let xColumn = "Team"
+
+    // function render(groupedTeam){
+    //     var nested = d3.nest()
+    //         .key(function (d){ return d[layerColumn]; })
+    //         .entries(groupedTeam);
+    //     var stack = d3.layout.stack()
+    //         .y(function (d) { return d[yColumn]; })
+    //         .values(function (d) { return d.values; });
+
+    //     var layers = stack(nested);
+
+    //     d3.select("body").append("pre")
+    //         .text(JSON.stringify(layers,null,2));
+    // }
+
+    // function type(d){
+
+    // }
+
+
+    let trace30 = {
+        x: qbpoints,
+        y: qbname,
+        type: 'bar',
+        orientation: "h",
+        name: "Quarterbacks",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'x',
+        //      order: 'descending'
+        //  }]
+        text: '',
+        textposition: 'auto',
+        hoverinfo: 'none',
+        marker: {
+            color: 'rgb(158,202,225)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(158,202,225)',
+                width: 1.5
+            }
+        }
+    };
+
+    let trace40 = {
+        x: rbpoints,
+        y: rbname,
+        type: 'bar',
+        orientation: "h",
+        name: "Running Backs",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'x',
+        //      order: 'descending'
+        //  }]
+        text: '',
+        textposition: 'auto',
+        hoverinfo: "none",
+        marker: {
+            color: 'rgb(8,148,17)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(8,148,17)',
+                width: 1.5
+            }
+        }
+    };
+
+    let trace41 = {
+        x: wrpoints,
+        y: wrname,
+        type: 'bar',
+        orientation: "h",
+        name: "Wide Receivers",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'x',
+        //      order: 'descending'
+        //  }]
+        text: '',
+        textposition: 'auto',
+        hoverinfo: "none",
+        marker: {
+            color: 'rgb(138,134,117)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(138,134,117)',
+                width: 1.5
+            }
+        }
+    };
+
+    let trace42 = {
+        x: tepoints,
+        y: tename,
+        type: 'bar',
+        orientation: "h",
+        name: "Tight Ends",
+        // transforms: [{   
+        //      type:'sort',
+        //      target: 'TotalFantasyPoints',
+        //      order: 'descending'
+        //  }]
+        text: '',
+        textposition: 'auto',
+        hoverinfo: "none",
+        marker: {
+            color: 'rgb(180,142,127)',
+            opacity: 0.6,
+            line: {
+                color: 'rgb(180,142,127)',
+                width: 1.5
+            }
+        }
+    };
+
+    let data30 = [trace30, trace40, trace41, trace42];
+
+    let layout30 = {
+        barmode: 'grouped',
+        title: '<b>All Player Total Fantasy Points Grouped by Position</b>'
+    };
+
+
+    Plotly.newPlot("bar3", data30, layout30);
+
 
     let trace20 = {
         x: statNames,
