@@ -125,9 +125,9 @@ d3.json(url).then(function (data) {
 
     //let qbname = positionQB.map(i => i.Player);
     let qbpoints = positionQB.map(i => i.TotalFantasyPoints);
-    let positions = ['WR', 'QB', 'RB', 'TE'];
-    let positionTotals = [totalWR, totalQB, totalRB, totalTE];
-    let positionCount = [countWR, countQB, countRB, countTE];
+    let positions = ['QB', 'WR', 'RB', 'TE'];
+    let positionTotals = [totalQB, totalWR, totalRB, totalTE];
+    let positionCount = [countQB, countWR, countRB, countTE];
 
     // let metric = 'length';
 
@@ -445,8 +445,8 @@ d3.json(url).then(function (data) {
         margin: {
             l: 150
         },
-        width: 600,
-        height: 500
+        width: 'auto',
+        height: 'auto'
     }
 
     Plotly.newPlot('myDiv', data3, layout2);
