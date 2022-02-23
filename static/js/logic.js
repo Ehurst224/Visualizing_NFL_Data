@@ -452,3 +452,4 @@ d3.json(url).then(function (data) {
     Plotly.newPlot('myDiv', data3, layout2);
 
 });
+
