@@ -22,17 +22,15 @@ h2{
     size: 500 px
 }
 
-table {
-    table-layout: fixed;
+/* table {
     width: 100%;
     height: 100%;
-  }
+  } */
 
 tr:nth-child(even) {
-    background-color: rgb(211, 202, 202);
+    background-color: whitesmoke;
 }
 
-body
-{
-    background: #cfd8dc;
-}
+th { display: table-header-group }
+tfoot { display: table-row-group }
+tr { page-break-inside: avoid }
