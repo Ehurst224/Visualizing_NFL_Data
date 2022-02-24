@@ -30,6 +30,13 @@ wr = Base.classes.wr
 
 app = Flask(__name__)
 
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or 'sqlite:///league.db'
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
 @app.route("/")
 def home():
 
@@ -69,9 +76,9 @@ def position():
 @app.route("/api/nfl")
 def nfl_grid():
 
-    df = pd.read_sql_table('nfl_all',con=engine)
-    table_results = df.to_dict('records')
-    print(df)
+    db = pd.read_sql_table('nfl_all',con=engine)
+    table_results = db.to_dict('records')
+    print(db)
     return jsonify(table_results)
 
 
