@@ -1,5 +1,5 @@
 // read in data from website
-const url = "http://nfl-viz.herokuapp.com/api/nfl";
+const url = "/api/nfl";
 
 
 // (async ($d3) => {
