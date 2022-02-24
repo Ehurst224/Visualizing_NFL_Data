@@ -34,3 +34,8 @@ tr:nth-child(even) {
 th { display: table-header-group }
 tfoot { display: table-row-group }
 tr { page-break-inside: avoid }
+
+div{
+    align-items: "center";
+    padding: auto;
+}
