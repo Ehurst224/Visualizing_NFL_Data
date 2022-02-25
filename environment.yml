@@ -1,4 +1,4 @@
-name: nfl_viz
+name: nfl-viz
 channels:
   - defaults
 dependencies:
