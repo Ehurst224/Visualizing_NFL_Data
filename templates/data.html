@@ -22,39 +22,39 @@
   <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <!-- Title of Project -->
-      <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <!-- Nav Bar Links -->
-          <li class="nav-item">
-            <!-- Home Page Link -->
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Analysis
-            </a>
-            <!-- Nav Bar Dropdown -->
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="{{ url_for('player') }}">Player Analysis</a></li>
-              <li><a class="dropdown-item" href="{{ url_for('team') }}">Team Analysis</a></li>
-              <li><a class="dropdown-item" href="{{ url_for('position') }}">Position Page</a></li>
+        <!-- Title of Project -->
+        <a class="navbar-brand" href="#">NFL Fantasy Statistics</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <!-- Nav Bar Links -->
+                <li class="nav-item">
+                    <!-- Home Page Link -->
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Analysis
+                    </a>
+                    <!-- Nav Bar Dropdown -->
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="{{ url_for('player') }}">Player Analysis</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('team') }}">Team Analysis</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('position') }}">Position Page</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <!-- Data Page Link -->
+                    <a class="nav-link" href="{{ url_for('data') }}">Data</a>
+                </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <!-- Data Page Link -->
-            <a class="nav-link" href="{{ url_for('data') }}">Data</a>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <!-- Data title and link to where we got our data -->
   <!-- <div class="container background">

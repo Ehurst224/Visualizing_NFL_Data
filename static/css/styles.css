@@ -31,6 +31,8 @@ tr:nth-child(even) {
     background-color: whitesmoke;
 }
 
+<<<<<<< HEAD
+=======
 th { display: table-header-group }
 tfoot { display: table-row-group }
 tr { page-break-inside: avoid }
@@ -39,3 +41,4 @@ div{
     align-items: "center";
     padding: auto;
 }
+>>>>>>> 26881e84b908b0c1a93d2c57aa2187f3994b9197
