@@ -31,6 +31,3 @@ tr:nth-child(even) {
     background-color: whitesmoke;
 }
 
-th { display: table-header-group }
-tfoot { display: table-row-group }
-tr { page-break-inside: avoid }
