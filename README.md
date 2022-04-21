@@ -13,7 +13,7 @@ https://jamboard.google.com/d/1tYFRuQdcOW4ZFDjQcvhgYQde3uV3GaUgHAzw5T6r_iA/edit?
 Our Home Page introduces our data set and explains what the site is for:
 ![Screenshot (124)](https://user-images.githubusercontent.com/89754154/164563979-aed822ba-f847-4720-bef6-4c5668a14174.png)
 
-We have 3 analysis pages that breaks down the statistics by player, team and position:
+We have 3 analysis pages that breaks down the statistics by position, team and player:
 ![Screenshot (121)](https://user-images.githubusercontent.com/89754154/164564037-25ca0c9a-4834-40fe-a412-5344d86e47a4.png)
 
 ![Screenshot (122)](https://user-images.githubusercontent.com/89754154/164564076-ae6e020e-988a-496d-a5dd-6b476e36a78d.png)
