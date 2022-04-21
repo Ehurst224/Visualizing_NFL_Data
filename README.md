@@ -9,3 +9,10 @@ link to app - https://nfl-viz.herokuapp.com/
 
 # Jamboard Outline
 https://jamboard.google.com/d/1tYFRuQdcOW4ZFDjQcvhgYQde3uV3GaUgHAzw5T6r_iA/edit?usp=sharing
+
+Our Home Page introduces our data set and explains what the site is for:
+
+
+We have 3 analysis pages that breaks down the statistics by player, team and position:
+
+Finally, there is a page with all of our data, with a link to the site we got it from:
